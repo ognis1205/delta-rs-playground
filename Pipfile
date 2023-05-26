@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+deltalake = "@ git+https://github.com/ognis1205/delta-rs@main"
 
 [dev-packages]
 
