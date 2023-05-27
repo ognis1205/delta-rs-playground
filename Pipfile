@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 deltalake = "@ git+https://github.com/ognis1205/delta-rs@main"
 notebook = "==6.5.3"
+pandas = "==2.0.1"
+boto3 = "==1.26.104"
 
 [dev-packages]
 
