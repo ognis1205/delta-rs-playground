@@ -8,6 +8,7 @@ deltalake = "@ git+https://github.com/ognis1205/delta-rs@feat/support-start-list
 notebook = "==6.5.3"
 pandas = "==2.0.1"
 boto3 = "==1.26.104"
+psutil = "==5.9.5"
 
 [dev-packages]
 
