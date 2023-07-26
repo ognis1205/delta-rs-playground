@@ -20,7 +20,6 @@ provider "aws" {
   region     = var.region
 }
 
-# S3
 resource "aws_s3_bucket" "this" {
   bucket        = var.bucket
   force_destroy = true
@@ -29,12 +28,18 @@ resource "aws_s3_bucket" "this" {
   }
 }
 
-resource "aws_s3_bucket_ownership_controls" "this" {
+resource "aws_s3_bucket_public_access_block" "this" {
   bucket = aws_s3_bucket.this.id
-  rule {
-    object_ownership = "BucketOwnerEnforced"
-  }
+  block_public_acls   = false
+  block_public_policy = false
 }
+
+#resource "aws_s3_bucket_ownership_controls" "this" {
+#  bucket = aws_s3_bucket.this.id
+#  rule {
+#    object_ownership = "BucketOwnerEnforced"
+#  }
+#}
 
 output "bucket" {
   value = aws_s3_bucket.this.bucket
